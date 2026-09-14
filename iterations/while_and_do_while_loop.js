@@ -1,5 +1,5 @@
 // ==========================================
-// VIDEO #28: WHILE AND DO-WHILE LOOPS
+// VIDEO #28: WHILE AND DO-WHILE LOOPS 
 // ==========================================
 
 // --- Basic while loop ---
