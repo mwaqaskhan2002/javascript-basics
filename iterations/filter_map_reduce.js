@@ -1,29 +1,38 @@
-// const coding = ['js', 'ruby', 'java', 'python', 'cpp']
+// ==========================================
+// 1. FOR-EACH VS FILTER
+// ==========================================
 
-// const values = coding.forEach( (item) => {
-//     // console.log(item);
-//     return item
-// })
+const coding = ["js", "ruby", "java", "python", "cpp"];
 
-// console.log(values);
+// forEach does NOT return any value (returns undefined)
+const values = coding.forEach((item) => {
+  // console.log(item);
+  return item;
+});
 
-//for each doesnot return values
+// console.log(values); // Output: undefined
 
-const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Explicit return using block scope {}
 // const newNums = myNums.filter( (num) => {
 //     return num > 5
 // } )
+
+// Doing the same filtering task using forEach manually:
+const newNums = [];
+
+myNums.forEach((num) => {
+  if (num > 4) {
+    newNums.push(num);
+  }
+});
+
 // console.log(newNums);
 
-// const newNums = []
-
-// myNums.forEach( (num) => {
-//     if (num > 4) {
-//         newNums.push(num)
-//     }
-// } )
-
-// console.log(newNums);
+// ==========================================
+// 2. REAL-WORLD DATA FILTERING (BOOKS DATABASE)
+// ==========================================
 
 const books = [
   { title: "Book One", genre: "Fiction", publish: 1981, edition: 2004 },
@@ -37,34 +46,56 @@ const books = [
   { title: "Book Nine", genre: "Non-Fiction", publish: 1981, edition: 1989 },
 ];
 
-// const userBooks = books.filter( (bk) => bk.genre === 'History')
+// Single condition check
+let userBooks = books.filter((bk) => bk.genre === "History");
 
-// const userBooks = books.filter( (bk) => bk.publish >= 1995)
-// let userBooks = books.filter( (bk) => 
-//     bk.publish >= 1995 && bk.genre === "History"
-// )
-// console.log(userBooks);
+// Multiple condition check (AND operator)
+userBooks = books.filter((bk) => {
+  return bk.publish >= 1995 && bk.genre === "History";
+});
 
-// const myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+console.log(userBooks);
 
+
+
+
+// ==========================================
+// MAP & METHOD CHAINING
+// ==========================================
+
+const myNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// Basic transformation: Adding 10 to each number
 // const newNums = myNumbers.map((num) => { return num + 10 })
-// const newNums = myNumbers
-//                 .map((num) => num * 10)
-//                 .map( (num) => num + 1)
-//                 .filter( (num) => num >= 40)
 
-// console.log(newNums);
+// Method Chaining: Connecting multiple maps and filters
+const newNums = myNumbers
+                .map((num) => num * 10)       // Step 1: Multiply by 10
+                .map((num) => num + 1)        // Step 2: Add 1 to each
+                .filter((num) => num >= 40)   // Step 3: Keep numbers >= 40
+
+console.log(newNums);
+
+
+
+// ==========================================
+// REDUCE METHOD
+// ==========================================
 
 const myreduceNums = [1, 2, 3]
-// const myTotal = myreduceNums.reduce(function (acc, currval){
+
+// Detailed syntax showing accumulator and current value tracking:
+// const myTotal = myreduceNums.reduce(function (acc, currval) {
 //     console.log(`acc: ${acc} and currval: ${currval}`);
 //     return acc + currval
-// })
+// }, 0)
 
-// const myTotal = myreduceNums.reduce((acc, curr) => acc+curr, 0);
+// Clean Arrow function syntax:
+const myTotal = myreduceNums.reduce((acc, curr) => acc + curr, 0);
+// console.log(myTotal); // Output: 6
 
-// console.log(myTotal);
 
+// Real-World Example: Shopping Cart Grand Total Calculation
 const shoppingCart = [
     {
         itemName: "js course",
@@ -84,6 +115,8 @@ const shoppingCart = [
     }
 ]
 
+// Summing up item prices with initial accumulator = 0
 const priceToPay = shoppingCart.reduce((acc, item) => acc + item.price, 0)
 
-console.log(priceToPay);
+console.log(priceToPay); // Output: 22996
+
