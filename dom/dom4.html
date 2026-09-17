@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <ul class="language">
+        <li class="">Javascript</li>
+    </ul>
+</body>
+<script>
+    // function addLanguage(langName) {
+    //     const li = document.createElement('li');
+    //     li.innerHTML = `${langName}`
+    //     document.querySelector('.language').appendChild(li)
+    // }
+    // addLanguage("Python")
+    // addLanguage("PHP")
+    // addLanguage("C#")
+    // addLanguage("Dar")
+
+
+    function addOptimizedLanguage(langName) {
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(langName))
+            document.querySelector('.language').appendChild(li)
+        }
+    addOptimizedLanguage('Python')
+    addOptimizedLanguage('C#')
+    addOptimizedLanguage('PHP')
+    addOptimizedLanguage('GoLang')
+    
+    // Edit
+    const secondlang = document.querySelector("li:nth-child(2)")
+    secondlang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondlang.replaceWith(newli)
+
+    //Edit 2
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = "<li>Typescript</li>"
+
+    //Delete
+    const lastLang = document.querySelector('li:nth-child(3)')
+    lastLang.remove()
+
+</script>
+
+</html>
