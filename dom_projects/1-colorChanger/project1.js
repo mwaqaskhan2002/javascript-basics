@@ -39,32 +39,38 @@
 
 
 // Actual Code
-let colorButton = document.querySelectorAll(".button")
-let bodyColor = document.querySelector("body")
+// let colorButton = document.querySelectorAll(".button")
+// let body = document.querySelector("body")
 
 
-colorButton.forEach(function(button){
+// colorButton.forEach(function(button){
 
-    button.addEventListener('click', function(e){
-        
-        let selectedColor = e.target.id;
+//     button.addEventListener('click', function(e){
 
-        // Comparison ke liye === use karein
-        if (selectedColor === "grey") {
-          bodyColor.style.backgroundColor = "grey";
-        }
-        if (selectedColor === "white") {
-          bodyColor.style.backgroundColor = "white";
-        }
-        if (selectedColor === "blue") {
-          bodyColor.style.backgroundColor = "blue";
-        }
-        if (selectedColor === "yellow") {
-          bodyColor.style.backgroundColor = "yellow";
-        }
+//         selectedcolor = e.target.id 
 
-    })
-})
+//         if (selectedcolor === 'grey') {
+//             body.style.backgroundColor = 'grey'
+//         }
+//         if (selectedcolor === 'white') {
+//             body.style.backgroundColor = 'white'
+//         }
+//         if (selectedcolor === 'blue') {
+//             body.style.backgroundColor = "blue";
+//         }
+//         if (selectedcolor === 'yellow') {
+//             body.style.backgroundColor = 'yellow'
+//         }
+//         if (selectedcolor === 'purple') {
+//             body.style.backgroundColor = 'purple'
+//         }
+//         if (selectedcolor === 'orange') {
+//             body.style.backgroundColor = 'orange'
+//         }
+
+//     })
+    
+// })
 
 // Optimized way Psuedo Code 
 // // Step 1: Elements Pick Karo
@@ -80,11 +86,104 @@ colorButton.forEach(function(button){
 
 // Actual Code 
 
-let colorButton = document.querySelectorAll(".button")
-let bodyColor = document.querySelector("body")
+// let colorButton = document.querySelectorAll(".button")
+// let bodyColor = document.querySelector("body")
 
-colorButton.forEach(function(button){
-    button.addEventListener('click', function(color){
-        bodyColor.style.backgroundColor = color.target.id
-    })
-})
+// colorButton.forEach(function(button){
+//     button.addEventListener('click', function(color){
+//         bodyColor.style.backgroundColor = color.target.id
+//     })
+// })
+
+
+
+
+// // Step 1: DOM Elements Select Karo
+// SET colorButton = SELECT ALL elements with class ".button"
+// SET body = SELECT "body" element
+
+// // Step 2: Loop aur Event Listener Attach Karo
+// FOR EACH button IN colorButton DO:
+//     LISTEN FOR "click" EVENT ON button WITH event Object (e):
+        
+//         // Step 3: Clicked Element Ki ID Extract Karo
+//         SET selectedcolor = e.target.id
+        
+//         // Step 4: Switch Case Se Matching Color Apply Karo
+//         SWITCH selectedcolor:
+//             CASE "grey":
+//                 SET body.style.backgroundColor = "grey"
+//                 BREAK
+//             CASE "white":
+//                 SET body.style.backgroundColor = "white"
+//                 BREAK
+//             CASE "blue":
+//                 SET body.style.backgroundColor = "blue"
+//                 BREAK
+//             CASE "yellow":
+//                 SET body.style.backgroundColor = "yellow"
+//                 BREAK
+//         END SWITCH
+
+//     END LISTEN
+// END FOR
+
+
+// let colorButton = document.querySelectorAll(".button")
+// let body = document.querySelector("body")
+
+
+// colorButton.forEach(function(button){
+
+//     button.addEventListener('click', function(e){
+
+//         selectedcolor = e.target.id 
+
+//         switch (selectedcolor) {
+//           case "grey":
+//             body.style.backgroundColor = "grey";
+//             break;
+//           case "white":
+//             body.style.backgroundColor = "white";
+//             break;
+//           case "blue":
+//             body.style.backgroundColor = "blue";
+//             break;
+//           case "yellow":
+//             body.style.backgroundColor = "yellow";
+//             break;
+//           case "purple":
+//             body.style.backgroundColor = "purple";
+//             break;
+//           case "orange":
+//             body.style.backgroundColor = "orange";
+//             break;
+//         }
+
+//     })
+    
+// })
+
+
+let colorButton = document.querySelectorAll(".button");
+let body = document.querySelector("body");
+
+let colorMap = {
+    "grey": "grey",
+    "white": "white",
+    "blue": "blue",
+    "yellow": "yellow",
+    "purple": "purple",
+    "orange": "orange"
+};
+
+colorButton.forEach(function (button) {
+
+    button.addEventListener('click', function(e){
+        let clickedID = e.target.id;
+
+        if (colorMap[clickedID]) {
+            body.style.backgroundColor = colorMap[clickedID];
+        }
+    });
+});
