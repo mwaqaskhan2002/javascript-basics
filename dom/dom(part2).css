@@ -1,0 +1,21 @@
+#box{
+    height: 300px;
+    width: 100px;
+    background-color: aquamarine;
+    border: 1px solid black;
+} 
+
+.outline{
+    border: 1px solid black;
+}
+
+.content {
+    color: red;
+    font-size: 20px;
+}
+
+/* Nayi Class (Jise hum JavaScript se append karenge) */
+.newClass {
+    background-color: yellow;
+    padding: 10px;
+}

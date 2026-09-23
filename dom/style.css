@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading-class {
+    color: blue;
+    /* text-decoration: line-through; */
+    background-color: yellow;
+    font-size: xx-large;
+}
+/* #heading2 {
+    color: blue;
+    background-color: yellow;
+    font-size: xx-large;
+} */
+
+body{
+    background-color: pink;
+}
+
+button{
+    background-color: blue;
+    color: white;
+}
