@@ -2,7 +2,7 @@
 
 // // Step 1: DOM Elements Select Karo
 // SET form = SELECT "#bmiForm"
-// SET result = SELECT "#results"  <-- [HTML ID MEIN 'S' HAI]
+// SET result = SELECT "#results" 
 
 // // Step 2: Form Submit Event Listener
 // LISTEN FOR "submit" ON form WITH event (e):
@@ -68,6 +68,10 @@
 // });
 
 // ==========================PSUEDO CODE =============================
+
+// SET form = SELECT "#bmiForm"
+// SET result = SELECT "#results"
+
 // // LISTEN FOR "submit" ON form:
 // PREVENT REFRESH
 
