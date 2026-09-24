@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Full page dark background & flex centering */
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Clock Card Container */
+.center {
+    background-color: #2b2b2b;
+    border: 2px solid #444;
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    min-width: 320px;
+}
+
+/* Top Banner Header */
+#banner {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Digital Time Display Area */
+#clock {
+    background-color: #111111;
+    color: #09ff00; /* Digital Greenish-Cyan Glow */
+    font-family: "Orbitron", sans-serif;
+    font-size: 2.8rem;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #00ffcc33;
+    letter-spacing: 3px;
+}
+
+#date {
+    font-size: 1.1rem;
+    font-family: 'Caveat', cursive, sans-serif;
+    color: #ffffff;
+    margin-top: 15px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
