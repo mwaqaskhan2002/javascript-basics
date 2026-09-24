@@ -1,3 +1,43 @@
+// ==========================PSUEDO CODE =============================
+
+// // Step 1: DOM Elements Select Karo
+// SET form = SELECT "#bmiForm"
+// SET result = SELECT "#results"  <-- [HTML ID MEIN 'S' HAI]
+
+// // Step 2: Form Submit Event Listener
+// LISTEN FOR "submit" ON form WITH event (e):
+//     PREVENT DEFAULT REFRESH
+
+//     // Step 3: Input Values Target Karo
+//     SET height = CONVERT TO NUMBER(INPUT "#height".value)
+//     SET weight = CONVERT TO NUMBER(INPUT "#weight".value)
+
+//     // Step 4: Validation
+//     IF height <= 0 OR height IS NaN THEN
+//         SET result.innerHTML = "Please give a valid height"
+//         RETURN
+//     END IF
+
+//     IF weight <= 0 OR weight IS NaN THEN
+//         SET result.innerHTML = "Please give a valid weight" <-- [TEXT TYPO FIX: height -> weight]
+//         RETURN
+//     END IF
+
+//     // Step 5: Calculation
+//     SET bmi = (weight / ((height * height) / 10000)).toFixed(2)
+
+//     // Step 6: Clean Else-If Structure (Nested IF bilkul mat use karo)
+//     IF bmi < 18.6 THEN
+//         SET result.innerHTML = "Your BMI is " + bmi + " (Underweight)"
+//     ELSE IF bmi >= 18.6 AND bmi <= 24.9 THEN
+//         SET result.innerHTML = "Your BMI is " + bmi + " (Normal Range)" <-- [LABEL TYPO FIX]
+//     ELSE
+//         SET result.innerHTML = "Your BMI is " + bmi + " (Overweight)"
+//     END IF
+
+// END LISTEN
+
+// ==========================ACTUAL CODE   =============================
 // let form = document.querySelector("#bmiForm");
 // const result = document.querySelector("#results");
 // form.addEventListener("submit", function (e) {
@@ -5,7 +45,6 @@
 
 //   const height = Number(document.querySelector("#height").value);
 //   const weight = Number(document.querySelector("#weight").value);
-  
 
 //   // 2. Output on UI using result.innerHTML
 //   if (height <= 0 || isNaN(height)) {
@@ -29,7 +68,7 @@
 // });
 
 
-
+// ==========================PSUEDO CODE =============================
 // // LISTEN FOR "submit" ON form:
 // PREVENT REFRESH
 
@@ -51,7 +90,7 @@
 // DISPLAY "Your BMI is " + bmi.toFixed(2) + " (" + label + ")"
 // END LISTEN
 
-
+// ==========================ACTUAL CODE   =============================
 let form = document.querySelector("#bmiForm");
 
 form.addEventListener("submit", (e) => {
