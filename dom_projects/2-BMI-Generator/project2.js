@@ -67,7 +67,6 @@
 //   }
 // });
 
-
 // ==========================PSUEDO CODE =============================
 // // LISTEN FOR "submit" ON form:
 // PREVENT REFRESH
@@ -94,23 +93,22 @@
 let form = document.querySelector("#bmiForm");
 
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
   // 1. Get values in 1 step
-  const height = parseInt(document.querySelector("#height").value);
-  const weight = parseInt(document.querySelector("#weight").value);
-  const result = document.querySelector("#results");
+    const height = parseInt(document.querySelector("#height").value);
+    const weight = parseInt(document.querySelector("#weight").value);
+    const result = document.querySelector("#results");
 
   // 2. Short Validation
-  if (!height || !weight || height <= 0 || weight <= 0) {
-    result.innerHTML = `Please enter valid height and weight`;
-  }
+    if (!height || !weight || height <= 0 || weight <= 0) {
+        result.innerHTML = `Please enter valid height and weight`;
+    }
 
   // 3. One-line Calculation & Category
-  const bmi = weight / ((height * height) / 10000);
+    const bmi = weight / ((height * height) / 10000);
 
-  let label =
-    bmi < 18.6 ? "Underweight" : bmi <= 24.9 ? "Normal weight" : "Overweight";
+    let label = bmi < 18.6 ? "Underweight" : bmi <= 24.9 ? "Normal weight" : "Overweight";
 
-  result.innerHTML = `Your BMI is <strong>${bmi.toFixed(2)}</strong> ${label}`;
+    result.innerHTML = `Your BMI is <strong>${bmi.toFixed(2)}</strong> ${label}`;
 });
