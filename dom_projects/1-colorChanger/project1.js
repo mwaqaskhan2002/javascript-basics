@@ -165,6 +165,30 @@
 // })
 
 
+// // Step 1: Elements Select Karo
+// SET buttons = SELECT ALL elements with class ".button"
+// SET body = SELECT "body" element
+
+// // Step 2: Color Mapping Object Banayein
+// SET colorMap = {
+//     "grey": "grey",
+//     "white": "white",
+//     "blue": "blue",
+//     "yellow": "yellow"
+// }
+
+// // Step 3: Loop aur Direct Mapping
+// FOR EACH button IN buttons DO:
+//     LISTEN FOR "click" EVENT ON button WITH event Object (e):
+//         SET clickedId = e.target.id
+        
+//         // Object se direct check karke value apply karo
+//         IF colorMap HAS clickedId THEN
+//             SET body.style.backgroundColor = colorMap[clickedId]
+//         END IF
+//     END LISTEN
+// END FOR
+
 let colorButton = document.querySelectorAll(".button");
 let body = document.querySelector("body");
 
