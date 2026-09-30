@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active_paragraph{
+            color: blue;
+            font-size: 20px;
+            background-color: yellow;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <button id="css">CSS</button>
+    <button id="add_css">Add</button>
+    <button id="remove_css">Remove</button>
+    <button id="toggle_css">Toggle</button>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, numquam dolorum accusantium modi temporibus debitis omnis hic repellendus autem tempore facere quas perferendis iste voluptatibus dolore placeat nam cupiditate rem!
+    Cumque dolore est eaque similique, dolorem nesciunt neque quis natus nemo ut. Alias quo reprehenderit explicabo laborum excepturi ex dolorum, molestias porro sapiente iusto reiciendis quisquam, ipsum in et repudiandae?</p>
+    
+</body>
+<script>
+    let btn_css = document.querySelector("#css");
+    let paragraph = document.querySelector("p");
+
+    let add_css = document.querySelector("#add_css");
+
+    let remove_css = document.querySelector("#remove_css");
+
+    let toggle_css = document.querySelector("#toggle_css");
+
+
+    btn_css.addEventListener('click', () => {
+        paragraph.style.color = "blue"
+        paragraph.style.background = "yellow"
+        paragraph.style.fontSize = "20px"
+    })
+
+    add_css.addEventListener('click', () => {
+        paragraph.classList.add('active_paragraph')
+    })
+    toggle_css.addEventListener('click', () => {
+        paragraph.classList.toggle('active_paragraph')
+    })
+    remove_css.addEventListener('click', () => {
+        paragraph.classList.remove('active_paragraph')
+
+        paragraph.style.color = "";
+        paragraph.style.background = "";
+        paragraph.style.fontSize = "";
+    })
+
+</script>
+</html>
