@@ -71,12 +71,12 @@ promiseFour.then((user) => {
 const PromiseFive = new Promise(function(resolve, reject){
 
     setTimeout(function () {
-      let error = false;
-      if (!error) {
-        resolve({username: "javascript", password: "123",});
+        let error = false;
+        if (!error) {
+            resolve({username: "javascript", password: "123",});
         } 
-      else {
-        reject("ERROR: JS went wrong");
+        else {
+            reject("ERROR: JS went wrong");
         }
     }, 1000);
 })
@@ -106,13 +106,13 @@ consumePromiseFive()
 // getAllUsers()
 
 fetch("https://api.github.com/users/mwaqaskhan2002")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  })
-  .finally();
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    })
+    .finally();
